@@ -1,0 +1,17 @@
+{
+  "name": "imdb-title-image",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "imdb-title-image": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "page-evaluate": "^1.0.0"
+  }
+}
