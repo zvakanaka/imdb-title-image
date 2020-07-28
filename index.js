@@ -18,9 +18,11 @@ function cleanTitle(str) {
 }
 
 (async () => {
-  const title = process.argv.length > 2
-	? cleanTitle(process.argv[2])
-  : 'a beautiful day in the neighborhood';
+    if (process.argv.length < 3) {
+	console.log('Usage:\n\timdb-title-image "movie name"');
+    }
+    const originalTitle = process.argv[2];
+  const title = cleanTitle(process.argv[2]);
 
   const { document: findListDocument } = await window(`https://www.imdb.com/find?q=${encodeURIComponent(title)}&s=tt&ttype=ft&ref_=fn_ft`);
   const firstResult = findListDocument.querySelector('.findList a');
@@ -33,5 +35,5 @@ function cleanTitle(str) {
   const titleImgSrc = document.querySelector('.poster img').src;
   console.log(titleImgSrc);
 
-  request(titleImgSrc).pipe(fs.createWriteStream(`thumbs/${title}.jpg`));
+  request(titleImgSrc).pipe(fs.createWriteStream(`thumbs/${originalTitle}.jpg`));
 })();
