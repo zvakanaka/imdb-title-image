@@ -35,5 +35,5 @@ function cleanTitle(str) {
   const titleImgSrc = document.querySelector('.poster img').src;
   console.log(titleImgSrc);
 
-  request(titleImgSrc).pipe(fs.createWriteStream(`thumbs/${originalTitle}.jpg`));
+  request(titleImgSrc).pipe(fs.createWriteStream(`thumbs/${strBeforeDot(originalTitle)}.jpg`));
 })();
