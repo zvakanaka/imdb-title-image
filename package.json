@@ -6,10 +6,14 @@
   "bin": {
     "imdb-title-image": "./index.js"
   },
+  "repository": {
+     "type": "git",
+     "url": "https://github.com/zvakanaka/imdb-title-image"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Adam Quinton",
   "license": "MIT",
   "dependencies": {
     "page-evaluate": "^1.0.0"
